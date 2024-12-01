@@ -22,7 +22,7 @@ const Toast = () => {
       toastClassName={({ type }: any) =>
         clsx(
           contextClass[(type || 'default') as tToastType],
-          'relative flex p-1 mt-3 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer bg-opacity-30 backdrop-filter backdrop-blur-md border border-white/10 z-90',
+          'relative flex p-1 my-3 mx-3 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer bg-opacity-30 backdrop-filter backdrop-blur-md border border-white/10 z-90',
         )
       }
       bodyClassName={() => 'text-sm font-white font-med block p-3 flex'}
