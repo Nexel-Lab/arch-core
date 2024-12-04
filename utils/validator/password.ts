@@ -73,7 +73,7 @@ const Func = (pass: string) => {
   return { error: false }
 }
 
-const validatePassword = {
+export const isValidPassword = {
   minEight,
   number,
   uppercase,
@@ -83,4 +83,4 @@ const validatePassword = {
   finalize,
   Func,
 }
-export default validatePassword
+export default isValidPassword

@@ -1,6 +1,6 @@
 import { css, Global } from '@emotion/react'
 
-const GlobalStyles = (theme, Darkmode = true) => {
+const GlobalStyles = (theme: Record<string, any>, Darkmode = true) => {
   const Color = theme.color
   return (
     <Global
@@ -171,8 +171,8 @@ const GlobalStyles = (theme, Darkmode = true) => {
         code,
         kbd,
         samp {
-          font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono',
-            Menlo, monospace;
+          font-family: ui-monospace, SFMono-Regular, Consolas,
+            'Liberation Mono', Menlo, monospace;
           font-size: 1em;
         }
 

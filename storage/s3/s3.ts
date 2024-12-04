@@ -261,7 +261,7 @@ export class S3 {
   public async downloadFile({
     bucket,
     key,
-  }: BaseS3MethodProps): Promise<Readable> {
+  }: BaseS3MethodProps): Promise<Readable | ReadableStream | undefined> {
     try {
       const { Body } = await this.s3.send(
         new GetObjectCommand({
@@ -269,7 +269,7 @@ export class S3 {
           Key: key,
         }),
       )
-      return Body as Readable
+      return Body as Readable | ReadableStream | undefined
     } catch (error) {
       this.handleError(error, 'downloadFile')
     }

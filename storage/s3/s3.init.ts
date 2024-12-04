@@ -1,4 +1,5 @@
 import { S3Client } from '@aws-sdk/client-s3'
+import { env } from '@env'
 
 const globalForS3 = globalThis as unknown as {
   s3: S3Client
@@ -20,11 +21,11 @@ const getS3Client = (): S3Client => {
 
   return new S3Client({
     credentials: {
-      accessKeyId: process.env.S3_UPLOAD_KEY,
-      secretAccessKey: process.env.S3_UPLOAD_SECRET,
+      accessKeyId: env.S3_UPLOAD_KEY,
+      secretAccessKey: env.S3_UPLOAD_SECRET,
     },
-    region: process.env.S3_UPLOAD_REGION,
-    endpoint: process.env.S3_UPLOAD_ENDPOINT,
+    region: env.S3_UPLOAD_REGION,
+    endpoint: env.S3_UPLOAD_ENDPOINT,
   })
 }
 

@@ -1,5 +1,5 @@
 import { MinioClient } from './minioClient'
-import { convertFromDataStream } from '../../../utils/data'
+import { convertFromDataStream } from '../../utils/data'
 
 const getImageBlob: (
   bucketName: string,

@@ -1,14 +1,14 @@
 import * as minio from 'minio'
-// import { env } from '@global/env.mjs'
+import { env } from '@env'
 
 const MinioClient: minio.Client = new minio.Client({
-  endPoint: process.env.S3_UPLOAD_ENDPOINT,
+  endPoint: env.S3_UPLOAD_ENDPOINT,
   useSSL: true,
-  accessKey: process.env.S3_UPLOAD_KEY,
-  secretKey: process.env.S3_UPLOAD_SECRET,
+  accessKey: env.S3_UPLOAD_KEY,
+  secretKey: env.S3_UPLOAD_SECRET,
 })
 
-const MinioClientFunc = (env): minio.Client =>
+const MinioClientFunc = (env: Record<string, string>): minio.Client =>
   new minio.Client({
     endPoint: env.S3_UPLOAD_ENDPOINT,
     useSSL: true,

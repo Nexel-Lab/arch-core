@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 import { uuidv7 } from 'uuidv7'
-import { s3 } from '@nexel/nextjs/libs/storage'
-import { setResponse } from '@nexel/nextjs/utils/server/response.status'
+import { s3 } from '../../storage'
+import { setResponse } from '../../utils/server/response.status'
 
 export const presignedRoute = async (
   req: Request,
